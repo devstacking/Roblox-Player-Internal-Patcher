@@ -4,7 +4,11 @@ Loop
 {
     IfWinExist, Roblox
     {
-        WinSetTitle, Roblox,, Roblox (Internal)
+        WinGetTitle, currentTitle, Roblox
+        If (currentTitle = "Roblox")
+        {
+            WinSetTitle, Roblox,, Roblox (Internal)
+        }
     }
     Sleep, 1000 ; Adjust the sleep time as needed
 }
