@@ -1,3 +1,5 @@
+; THIS SOURCE IS FOR 0.0.1
+
 SetTitleMatchMode, 2 ; Allow for partial matches in the window title
 
 Loop
