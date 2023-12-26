@@ -1,6 +1,4 @@
-; THIS SOURCE IS FOR 0.0.1
-
-SetTitleMatchMode, 2 ; Allow for partial matches in the window title
+SetTitleMatchMode, 2
 
 Loop
 {
@@ -12,5 +10,20 @@ Loop
             WinSetTitle, Roblox,, Roblox (Internal)
         }
     }
-    Sleep, 1000 ; Adjust the sleep time as needed
+    Sleep, 10
 }
+
+^l::
+    SetTitleMatchMode, 2 ; Allow for partial title matches
+    IfWinExist, Roblox
+    {
+        WinGetTitle, currentTitle, Roblox
+        If (currentTitle = "Roblox (Internal)")
+        {
+            WinGetPos, , , WinWidth, WinHeight, Roblox
+            X := (A_ScreenWidth - WinWidth) // 2
+            Y := (A_ScreenHeight - WinHeight) // 2
+            WinMove, Roblox, , % X, % Y
+        }
+    }
+return
